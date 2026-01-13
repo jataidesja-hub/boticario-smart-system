@@ -14,16 +14,11 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="logo-area">
-                {/* Filtro mágico: Inverte as cores (Preto vira Branco) e remove o fundo (Screen) */}
+                {/* Usando a nova Logo Rosa, sem filtros estranhos, apenas ela pura e bonita */}
                 <img
-                    src="/logo-new.jpg"
+                    src="/logo-boticario-pink.jpg"
                     alt="O Boticário"
-                    style={{
-                        width: '100%',
-                        filter: 'invert(1)',
-                        mixBlendMode: 'screen',
-                        opacity: 0.95
-                    }}
+                    className="sidebar-logo"
                 />
             </div>
 
@@ -40,8 +35,9 @@ export default function Sidebar() {
                 ))}
             </nav>
 
-            <div style={{ marginTop: 'auto', textAlign: 'center' }}>
-                <div style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'rgba(255,255,255,0.8)', letterSpacing: '1px' }}>GRUPO DINA SIMÃO</div>
+            <div className="sidebar-footer">
+                <div style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'white', letterSpacing: '0.5px' }}>GRUPO DINA SIMÃO</div>
+                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>Logística Inteligente v2.1</div>
             </div>
         </aside>
     );

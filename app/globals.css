@@ -1,15 +1,22 @@
 :root {
-  --primary: #709176;
-  --bg-dark: #070a08;
-  --bg-gradient: radial-gradient(circle at top right, #132416 0%, #050706 100%);
+  /* NOVA COR PRINCIPAL: ROSA BOTICÁRIO */
+  --primary: #d62973;
+  --primary-glow: rgba(214, 41, 115, 0.4);
+
+  /* Fundo Dark Moderno (Deep Purple/Black) */
+  --bg-dark: #0a0507;
+  --bg-gradient: radial-gradient(circle at top right, #260a15 0%, #0a0507 100%);
+
+  /* Vidro */
   --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
+
   --text-main: #f0f4f0;
   --text-dim: rgba(240, 244, 240, 0.6);
   --sidebar-width: 280px;
 
-  /* Cor exata do fundo da imagem do cacto */
   --splash-bg: #e5e2d6;
+  /* Bege do Cacto permanece para a splash */
 }
 
 * {
@@ -19,7 +26,7 @@
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', -apple-system, sans-serif;
   color: var(--text-main);
   background: var(--bg-dark);
   background-image: var(--bg-gradient);
@@ -27,7 +34,7 @@ body {
   min-height: 100vh;
 }
 
-/* Splash Screen Só Cacto */
+/* Splash Screen (Só Cacto) */
 .splash-container {
   position: fixed;
   inset: 0;
@@ -43,7 +50,6 @@ body {
   max-width: 500px;
   width: 90%;
   mix-blend-mode: multiply;
-  /* Mescla bordas da imagem com o fundo bege */
 }
 
 .app-loaded .splash-container {
@@ -52,60 +58,79 @@ body {
   pointer-events: none;
 }
 
-/* Logo Flutuante */
+/* Logo Cacto Flutuante */
 .float-logo {
   position: fixed;
   width: 100px;
   height: 100px;
   bottom: 20px;
   right: 20px;
-  object-fit: cover;
   border-radius: 20px;
   opacity: 0;
   transition: all 1s ease 0.5s;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .app-loaded .float-logo {
   opacity: 1;
 }
 
-/* Sidebar */
+/* Sidebar Moderna */
 .sidebar {
   width: var(--sidebar-width);
   height: 100vh;
   position: fixed;
-  background: rgba(5, 8, 6, 0.95);
+  background: rgba(10, 5, 7, 0.95);
+  /* Fundo bem escuro */
   border-right: 1px solid var(--glass-border);
-  padding: 2rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
   z-index: 100;
 }
 
+/* Área da Logo */
 .logo-area {
   margin-bottom: 3rem;
-  padding: 0 1rem;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+}
+
+.sidebar-logo {
+  width: 100%;
+  border-radius: 8px;
+  /* A logo rosa vai aparecer como é, brilhante */
+  box-shadow: 0 4px 20px rgba(214, 41, 115, 0.2);
 }
 
 .nav-item {
   color: var(--text-dim);
-  padding: 16px;
-  margin-bottom: 8px;
-  border-radius: 12px;
+  padding: 16px 20px;
+  border-radius: 14px;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 12px;
   transition: 0.3s;
+  margin-bottom: 8px;
 }
 
 .nav-item:hover,
 .nav-item.active {
   background: var(--primary);
   color: white;
-  box-shadow: 0 5px 20px rgba(112, 145, 118, 0.4);
+  box-shadow: 0 8px 25px -5px var(--primary-glow);
 }
 
-/* Conteúdo Principal */
+/* Área de Rodapé da Sidebar */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+
 .main-content {
   margin-left: var(--sidebar-width);
   padding: 3rem 4rem;
@@ -119,67 +144,7 @@ body {
   margin-top: 2rem;
 }
 
-/* CORES DOS STATUS - NEON */
-.tag {
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Amarelo Neon */
-.tag-waiting {
-  background: rgba(255, 215, 0, 0.15);
-  color: #ffd700;
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-/* Azul Neon */
-.tag-separation {
-  background: rgba(0, 191, 255, 0.15);
-  color: #00bfff;
-  border: 1px solid rgba(0, 191, 255, 0.4);
-  text-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-}
-
-/* Roxo Neon */
-.tag-billing {
-  background: rgba(186, 85, 211, 0.15);
-  color: #ba55d3;
-  border: 1px solid rgba(186, 85, 211, 0.4);
-  text-shadow: 0 0 10px rgba(186, 85, 211, 0.3);
-}
-
-/* Verde Neon */
-.tag-done {
-  background: rgba(0, 255, 127, 0.15);
-  color: #00ff7f;
-  border: 1px solid rgba(0, 255, 127, 0.4);
-  text-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
-}
-
-/* Tabela e Inputs */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th {
-  text-align: left;
-  padding: 1rem;
-  color: var(--text-dim);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
-td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--glass-border);
-}
-
+/* Inputs e Botões */
 input,
 select {
   width: 100%;
@@ -194,12 +159,66 @@ select {
 .btn-primary {
   background: var(--primary);
   color: white;
-  border: none;
   width: 100%;
   padding: 16px;
   border-radius: 12px;
   font-weight: bold;
+  font-size: 1rem;
+  border: none;
   cursor: pointer;
-  margin-top: 2rem;
   transition: 0.3s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 10px 40px -10px var(--primary-glow);
+}
+
+/* Status Colors */
+.tag {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.tag-waiting {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.tag-separation {
+  background: rgba(0, 191, 255, 0.2);
+  color: #00bfff;
+  border: 1px solid rgba(0, 191, 255, 0.4);
+}
+
+.tag-billing {
+  background: rgba(214, 41, 115, 0.2);
+  color: #ff69b4;
+  border: 1px solid rgba(214, 41, 115, 0.4);
+}
+
+.tag-done {
+  background: rgba(0, 255, 127, 0.2);
+  color: #00ff7f;
+  border: 1px solid rgba(0, 255, 127, 0.4);
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+th {
+  padding: 15px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
