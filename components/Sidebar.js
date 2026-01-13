@@ -13,8 +13,8 @@ export default function Sidebar() {
 
     return (
         <aside className="sidebar">
-            <div className="logo-area">
-                <div className="logo-text">BOTICÁRIO</div>
+            <div className="logo-area" style={{ textAlign: 'center' }}>
+                <img src="/boticario-verde.png" alt="O Boticário" style={{ filter: 'none', width: '100%', borderRadius: '10px' }} />
             </div>
 
             <nav className="nav-links">
@@ -30,9 +30,9 @@ export default function Sidebar() {
                 ))}
             </nav>
 
-            <div style={{ marginTop: 'auto', fontSize: '0.8rem', color: 'var(--text-dim)' }}>
-                Sistema de Distribuição v2.0<br />
-                GitHub ⇄ Vercel
+            <div style={{ marginTop: 'auto', fontSize: '0.7rem', opacity: 0.6 }}>
+                GRUPO DINA SIMÃO<br />
+                Gestão de Logística v2.0
             </div>
         </aside>
     );

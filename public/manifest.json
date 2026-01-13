@@ -1,0 +1,17 @@
+{
+  "name": "Boticário - Grupo Dina Simão",
+  "short_name": "Dina Simão",
+  "description": "Sistema de Distribuição O Boticário",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#709176",
+  "icons": [
+    {
+      "src": "/logo-dina.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
