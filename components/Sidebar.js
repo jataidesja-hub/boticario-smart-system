@@ -90,8 +90,8 @@ export default function Sidebar() {
             )}
 
             <div className="sidebar-footer">
-                <div style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'white', letterSpacing: '0.5px' }}>GRUPO DINA SIMÃO</div>
-                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>Logística Inteligente v2.4</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'white', letterSpacing: '0.5px' }}>J.A SOFTWARE & SOLUTION</div>
+                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>Versão v2.5</div>
             </div>
         </aside>
     );
