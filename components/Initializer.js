@@ -7,7 +7,7 @@ export default function Initializer() {
     const [showInstall, setShowInstall] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => setLoaded(true), 3500); // 3.5s de splash
+        const timer = setTimeout(() => setLoaded(true), 3000);
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
@@ -29,33 +29,26 @@ export default function Initializer() {
 
     return (
         <div className={loaded ? 'app-loaded' : ''}>
-            {/* Botão de Instalar (PWA) */}
             {showInstall && (
                 <button
                     onClick={handleInstall}
                     style={{
                         position: 'fixed', top: '20px', right: '20px', zIndex: 2000,
-                        padding: '10px 20px', background: 'var(--primary)', color: '#fff',
+                        padding: '12px 24px', background: '#e3e1d5', color: '#333',
                         border: 'none', borderRadius: '30px', fontWeight: 'bold', cursor: 'pointer',
-                        boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
+                        boxShadow: '0 5px 20px rgba(0,0,0,0.2)'
                     }}
                 >
-                    📲 Instalar App
+                    📲 Instalar
                 </button>
             )}
 
-            {/* --- SPLASH SCREEN --- */}
+            {/* Splash Screen Limpa - Só o Cacto */}
             <div className="splash-container">
-                <div className="splash-content-area">
-                    {/* O Cacto (Fundo Bege + Multiply) */}
-                    <img src="/logo-dina.jpg" className="splash-cactus" alt="Grupo Dina Simão" />
-
-                    {/* A Logo do Boticário (Preta + Multiply) */}
-                    <img src="/logo-new.jpg" className="splash-logo-text" alt="O Boticário" />
-                </div>
+                <img src="/logo-dina.jpg" className="splash-cactus" alt="Grupo Dina Simão" />
             </div>
 
-            {/* --- Cacto que fica no canto depois --- */}
+            {/* Cacto que fica no canto depois */}
             <img src="/logo-dina.jpg" className="float-logo" alt="Logo" />
         </div>
     );

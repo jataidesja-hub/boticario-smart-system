@@ -14,11 +14,16 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="logo-area">
-                {/* Usamos a logo nova com filtros CSS para inverter: Preto vira Branco, Branco vira Transparente */}
+                {/* Filtro mágico: Inverte as cores (Preto vira Branco) e remove o fundo (Screen) */}
                 <img
                     src="/logo-new.jpg"
                     alt="O Boticário"
-                    className="sidebar-logo"
+                    style={{
+                        width: '100%',
+                        filter: 'invert(1)',
+                        mixBlendMode: 'screen',
+                        opacity: 0.95
+                    }}
                 />
             </div>
 
@@ -36,8 +41,7 @@ export default function Sidebar() {
             </nav>
 
             <div style={{ marginTop: 'auto', textAlign: 'center' }}>
-                <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'white', letterSpacing: '1px' }}>GRUPO DINA SIMÃO</div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', marginTop: '4px' }}>INTELLIGENCE SYSTEM v2.0</div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'rgba(255,255,255,0.8)', letterSpacing: '1px' }}>GRUPO DINA SIMÃO</div>
             </div>
         </aside>
     );
