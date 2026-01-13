@@ -70,7 +70,12 @@ export default function Configuracoes() {
             <div className="glass-card" style={{ maxWidth: '600px', marginTop: '20px' }}>
                 <h3 style={{ marginBottom: '1rem' }}>Equipe Atual</h3>
                 {funcionarios.length === 0 ? (
-                    <p style={{ color: 'var(--text-dim)' }}>Nenhum funcionário encontrado.</p>
+                    <div style={{ padding: '20px', textAlign: 'center', opacity: 0.7, background: 'rgba(255,255,255,0.05)', borderRadius: '12px' }}>
+                        <p>Nenhum funcionário apareceu.</p>
+                        <p style={{ fontSize: '0.8rem', marginTop: '10px', color: '#ffeb3b' }}>
+                            ⚠️ Se você adicionou e não apareceu, lembre-se de <strong>Implantar a Nova Versão</strong> no Google Apps Script.
+                        </p>
+                    </div>
                 ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         {funcionarios.map((func, index) => (

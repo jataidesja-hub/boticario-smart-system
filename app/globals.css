@@ -217,6 +217,14 @@ select {
   margin-top: 8px;
 }
 
+/* CORREÇÃO PARA OS DROPDOWNS NÃO FICAREM BRANCOS */
+select option {
+  background-color: #1a0b10;
+  /* Fundo escuro rosado para combinar */
+  color: white;
+  padding: 10px;
+}
+
 .btn-primary {
   background: var(--primary);
   color: white;
