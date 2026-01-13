@@ -96,7 +96,7 @@ export default function Operacao() {
                             <option value="Aguardando separação">Aguardando separação</option>
                             <option value="Separação">Separação</option>
                             <option value="Faturamento">Faturamento</option>
-                            <option value="Concluído">Concluído</option>
+                            <option value="Aguardando assinatura">Aguardando assinatura</option>
                         </select>
                     </div>
 
