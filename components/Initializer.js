@@ -3,14 +3,13 @@ import { useState, useEffect } from 'react';
 
 export default function Initializer() {
     const [loaded, setLoaded] = useState(false);
-    const [deferredPrompt, setDeferredPrompt] = useState(null);
     const [showInstall, setShowInstall] = useState(false);
+    const [deferredPrompt, setDeferredPrompt] = useState(null);
 
     useEffect(() => {
-        // Timer para fechar a splash inicial (3 segundos)
+        // Garante que a splash dure pelo menos 3 segundos
         const timer = setTimeout(() => setLoaded(true), 3000);
 
-        // Lógica de Instalação (PWA)
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             setDeferredPrompt(e);
@@ -37,9 +36,13 @@ export default function Initializer() {
                 </button>
             )}
 
+            {/* Splash Screen */}
             <div className="splash-container">
-                <img src="/logo-dina.jpg" className="splash-logo" alt="Splash" />
+                <img src="/logo-dina.jpg" className="splash-logo" alt="Grupo Dina Simão" />
             </div>
+
+            {/* Cacto Flutuante (Aparece após o carregamento) */}
+            <img src="/logo-dina.jpg" className="float-logo" alt="Logo Flutuante" />
         </div>
     );
 }

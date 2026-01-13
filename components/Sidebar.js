@@ -13,13 +13,15 @@ export default function Sidebar() {
 
     return (
         <aside className="sidebar">
-            <div className="logo-area">
+            <div className="logo-area" style={{ background: 'transparent' }}>
                 <img
                     src="/boticario-verde.png"
                     alt="O Boticário"
                     style={{
                         width: '100%',
-                        filter: 'brightness(0) invert(1)' // Força a logo a ficar branca e nítida
+                        filter: 'brightness(0) invert(1) hue-rotate(180deg)', /* Garante que fique branco e nítido */
+                        mixBlendMode: 'screen', /* Remove o preto se houver */
+                        display: 'block'
                     }}
                 />
             </div>
@@ -37,7 +39,7 @@ export default function Sidebar() {
                 ))}
             </nav>
 
-            <div style={{ marginTop: 'auto', fontSize: '0.7rem', color: 'var(--text-dim)', textAlign: 'center' }}>
+            <div style={{ marginTop: 'auto', fontSize: '0.8rem', color: 'var(--text-dim)', textAlign: 'center' }}>
                 <strong>GRUPO DINA SIMÃO</strong><br />
                 INTELLIGENCE SYSTEM v2.0
             </div>
