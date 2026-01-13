@@ -7,7 +7,8 @@ export default function Initializer() {
     const [showInstall, setShowInstall] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => setLoaded(true), 3000);
+        // 4 segundos para apreciar o efeito gravitacional
+        const timer = setTimeout(() => setLoaded(true), 4000);
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
@@ -34,22 +35,30 @@ export default function Initializer() {
                     onClick={handleInstall}
                     style={{
                         position: 'fixed', top: '20px', right: '20px', zIndex: 2000,
-                        padding: '12px 24px', background: '#e3e1d5', color: '#333',
+                        padding: '12px 24px', background: 'var(--primary)', color: '#fff',
                         border: 'none', borderRadius: '30px', fontWeight: 'bold', cursor: 'pointer',
-                        boxShadow: '0 5px 20px rgba(0,0,0,0.2)'
+                        boxShadow: '0 5px 20px rgba(0,0,0,0.3)'
                     }}
                 >
-                    📲 Instalar
+                    📲 Instalar App
                 </button>
             )}
 
-            {/* Splash Screen Limpa - Só o Cacto */}
+            {/* --- SPLASH SCREEN GRAVITACIONAL --- */}
             <div className="splash-container">
-                <img src="/logo-dina.jpg" className="splash-cactus" alt="Grupo Dina Simão" />
+                <div className="gravity-core">
+                    {/* Ondas Gravitacionais */}
+                    <div className="ripple"></div>
+                    <div className="ripple"></div>
+                    <div className="ripple"></div>
+
+                    {/* Logo Central (Cacto) */}
+                    <img src="/logo-circle-dina.jpg" className="splash-logo-circle" alt="Grupo Dina Simão" />
+                </div>
             </div>
 
             {/* Cacto que fica no canto depois */}
-            <img src="/logo-dina.jpg" className="float-logo" alt="Logo" />
+            <img src="/logo-circle-dina.jpg" className="float-logo" alt="Logo" />
         </div>
     );
 }
