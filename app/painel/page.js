@@ -8,10 +8,17 @@ export default function Painel() {
     const fetchPedidos = async () => {
         try {
             const res = await fetch('/api/pedidos');
+            if (!res.ok) throw new Error('Erro na API');
+
             const data = await res.json();
-            setPedidos(data);
+            if (Array.isArray(data)) {
+                setPedidos(data);
+            } else {
+                setPedidos([]);
+            }
         } catch (error) {
             console.error('Erro ao buscar pedidos:', error);
+            setPedidos([]);
         } finally {
             setLoading(false);
         }
