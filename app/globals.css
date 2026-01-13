@@ -19,11 +19,26 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  color: var(--text-main);
-  background: var(--bg-dark);
+  color: var(--text-primary);
+  background: var(--bg-color);
   background-image: var(--bg-gradient);
   background-attachment: fixed;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Simula Zoom de 90% apenas no Desktop (Telas maiores que 1024px) */
+@media (min-width: 1024px) {
+  body {
+    zoom: 0.9;
+    /* Fallback para Firefox que não suporta 'zoom' */
+    transform: scale(0.9);
+    transform-origin: 0 0;
+    -moz-transform: scale(0.9);
+    -moz-transform-origin: 0 0;
+    width: 111.11%;
+    /* Compensa o encolhimento para ocupar 100% da tela */
+  }
 }
 
 /* --- SPLASH SCREEN GRAVITACIONAL --- */
