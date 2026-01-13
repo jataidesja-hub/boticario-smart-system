@@ -9,7 +9,6 @@ export default function Sidebar() {
         { name: 'Recepção', path: '/', icon: '📝' },
         { name: 'Painel Galpão', path: '/painel', icon: '📺' },
         { name: 'Operação', path: '/operacao', icon: '📦' }, // Ícone mudou para Caixa
-        { name: 'Configurações', path: '/configuracoes', icon: '⚙️' }, // Novo item
     ];
 
     return (
