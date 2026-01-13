@@ -57,7 +57,7 @@ export default function Painel() {
         <div className="animate-fade">
             <header style={{ marginBottom: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                 <div>
-                    <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Painel de Pedidos 📺</h1>
+                    <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Painel VD+ 📺</h1>
                     <p style={{ color: 'var(--text-dim)' }}>Monitoramento em tempo real do fluxo do galpão.</p>
                 </div>
                 <div style={{ textAlign: 'right', fontSize: '0.9rem', color: 'var(--secondary)' }}>

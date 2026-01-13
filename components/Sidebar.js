@@ -39,7 +39,7 @@ export default function Sidebar() {
 
     const menuItems = [
         { name: 'Recepção', path: '/', icon: '📝' },
-        { name: 'Painel Galpão', path: '/painel', icon: '📺' },
+        { name: 'Painel VD+', path: '/painel', icon: '📺' },
         { name: 'Operação', path: '/operacao', icon: '📦' },
     ];
 
