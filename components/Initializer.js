@@ -20,8 +20,12 @@ export default function Initializer() {
 
         // Detectar se é iPhone/iPad (para mostrar instrução manual)
         const isIosDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        // Checa se já não está rodando como app (standalone)
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+        // REGISTRAR SERVICE WORKER (Para PC aceitar instalar)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW falhou', err));
+        }
 
         if (isIosDevice && !isStandalone) {
             setIsIOS(true);

@@ -284,3 +284,89 @@ th {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    top: auto;
+    flex-direction: row;
+    padding: 10px;
+    border-right: none;
+    border-top: 1px solid var(--glass-border);
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(10, 5, 7, 0.98);
+    z-index: 999;
+  }
+
+  .logo-area,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .nav-item {
+    padding: 8px;
+    margin: 0;
+    font-size: 0.65rem;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .nav-item.active {
+    color: var(--primary);
+  }
+
+  .nav-item span {
+    font-size: 1.4rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+    padding-bottom: 100px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+
+  /* Form fica em 1 coluna */
+  form {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  div[style*="gridColumn: 'span 2'"] {
+    grid-column: span 1 !important;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+
+  /* Botão Instalar Mobile */
+  button.nav-item {
+    width: auto !important;
+    border: none !important;
+    margin-top: 0 !important;
+  }
+}
