@@ -8,13 +8,13 @@ export default function Sidebar() {
     const menuItems = [
         { name: 'Recepção', path: '/', icon: '📝' },
         { name: 'Painel Galpão', path: '/painel', icon: '📺' },
-        { name: 'Operação', path: '/operacao', icon: '⚙️' },
+        { name: 'Operação', path: '/operacao', icon: '📦' }, // Ícone mudou para Caixa
+        { name: 'Configurações', path: '/configuracoes', icon: '⚙️' }, // Novo item
     ];
 
     return (
         <aside className="sidebar">
             <div className="logo-area">
-                {/* Usando a nova Logo Rosa, sem filtros estranhos, apenas ela pura e bonita */}
                 <img
                     src="/logo-boticario-pink.jpg"
                     alt="O Boticário"
@@ -37,7 +37,7 @@ export default function Sidebar() {
 
             <div className="sidebar-footer">
                 <div style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'white', letterSpacing: '0.5px' }}>GRUPO DINA SIMÃO</div>
-                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>Logística Inteligente v2.1</div>
+                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>Logística Inteligente v2.2</div>
             </div>
         </aside>
     );
