@@ -12,7 +12,20 @@ export default function Painel() {
 
             const data = await res.json();
             if (Array.isArray(data)) {
-                setPedidos(data);
+                // Ordenação Inteligente:
+                // 1. Pedidos NÃO concluídos aparecem primeiro
+                // 2. Depois ordenamos por data (mais recentes primeiro)
+                const sortedData = data.sort((a, b) => {
+                    const isDoneA = a.etapa === 'Concluído';
+                    const isDoneB = b.etapa === 'Concluído';
+
+                    if (isDoneA && !isDoneB) return 1; // A vai para o fim
+                    if (!isDoneA && isDoneB) return -1; // B vai para o fim
+
+                    // Se ambos forem iguais (ambos concluídos ou ambos ativos), ordena por ID (ou data) decrescente
+                    return b.id - a.id;
+                });
+                setPedidos(sortedData);
             } else {
                 setPedidos([]);
             }
