@@ -14,7 +14,11 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="logo-area" style={{ textAlign: 'center' }}>
-                <img src="/boticario-verde.png" alt="O Boticário" style={{ filter: 'none', width: '100%', borderRadius: '10px' }} />
+                <img
+                    src="/boticario-verde.png"
+                    alt="O Boticário"
+                    style={{ width: '100%', borderRadius: '0', filter: 'brightness(0) invert(1)' }}
+                />
             </div>
 
             <nav className="nav-links">
@@ -30,9 +34,9 @@ export default function Sidebar() {
                 ))}
             </nav>
 
-            <div style={{ marginTop: 'auto', fontSize: '0.7rem', opacity: 0.6 }}>
-                GRUPO DINA SIMÃO<br />
-                Gestão de Logística v2.0
+            <div style={{ marginTop: 'auto', fontSize: '0.75rem', color: 'var(--text-dim)', letterSpacing: '1px' }}>
+                <strong>GRUPO DINA SIMÃO</strong><br />
+                INTELLIGENCE SYSTEM v2.0
             </div>
         </aside>
     );
