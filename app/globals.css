@@ -8,6 +8,8 @@
   --text-main: #e2e8e0;
   --text-dim: rgba(226, 232, 224, 0.5);
   --sidebar-width: 280px;
+  --beige-splash: #e3e1d5;
+  /* Tom bege exato do fundo do cacto */
 }
 
 * {
@@ -22,15 +24,13 @@ body {
   background: var(--bg-gradient);
   background-attachment: fixed;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Splash Screen Imersiva */
+/* Splash Screen Perfeita (Sem bordas brancas) */
 .splash-container {
   position: fixed;
   inset: 0;
-  background: #e6e4dc;
-  /* Cor exata do fundo da imagem do cacto */
+  background: var(--beige-splash);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,234 +42,117 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  background: var(--beige-splash);
 }
 
 .app-loaded .splash-container {
-  background: transparent;
+  opacity: 0;
   pointer-events: none;
+  transform: scale(1.1);
 }
 
 .app-loaded .splash-logo {
   position: fixed;
   width: 150px;
   height: 150px;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  animation: float 3s ease-in-out infinite;
 }
 
-/* Sidebar Ultra Moderna */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Sidebar Dark Mode Premium */
 .sidebar {
   width: var(--sidebar-width);
   height: 100vh;
   position: fixed;
-  left: 0;
-  top: 0;
-  background: rgba(10, 15, 11, 0.8);
-  backdrop-filter: blur(20px);
+  background: rgba(8, 12, 9, 0.95);
+  backdrop-filter: blur(30px);
   border-right: 1px solid var(--glass-border);
   padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
   z-index: 100;
+}
+
+.logo-area {
+  margin-bottom: 3.5rem;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .logo-area img {
   width: 100%;
-  margin-bottom: 3rem;
-  filter: drop-shadow(0 0 10px var(--primary-glow));
+  /* Filtro para deixar a logo visível e tirar o fundo branco */
+  mix-blend-mode: lighten;
 }
 
 .nav-item {
   color: var(--text-dim);
-  padding: 14px 20px;
-  border-radius: 16px;
+  padding: 15px 22px;
+  border-radius: 18px;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 15px;
-  font-weight: 500;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.3s;
 }
 
 .nav-item:hover {
   background: var(--glass);
   color: white;
-  transform: translateX(8px);
 }
 
 .nav-item.active {
   background: var(--primary);
   color: white;
-  box-shadow: 0 8px 25px var(--primary-glow);
+  box-shadow: 0 10px 30px var(--primary-glow);
 }
 
-/* Main Content Area */
+/* Main UI */
 .main-content {
   margin-left: var(--sidebar-width);
   padding: 4rem;
-  max-width: 1400px;
 }
 
 .glass-card {
   background: var(--glass);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 32px;
-  padding: 3rem;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.6s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Títulos Premium */
-h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: -1px;
-}
-
-/* Forms e Inputs */
-.input-group {
-  margin-bottom: 2rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  border-radius: 35px;
+  padding: 3.5rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
 input,
 select {
-  width: 100%;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  color: white;
-  font-size: 1.05rem;
-  transition: all 0.3s;
-}
-
-input:focus,
-select:focus {
-  outline: none;
-  border-color: var(--primary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px var(--primary-glow);
-}
-
-/* Botão de Impacto */
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, #4a634e 100%);
-  color: white;
-  border: none;
   padding: 18px;
   border-radius: 18px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px var(--primary-glow);
-  filter: brightness(1.1);
-}
-
-/* Tabelas */
-.table-container {
-  overflow-x: auto;
-  margin-top: 1rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 8px;
-}
-
-th {
-  text-align: left;
-  padding: 1.5rem;
-  color: var(--text-dim);
-  font-size: 0.8rem;
+.btn-primary {
+  background: var(--primary);
+  padding: 20px;
+  border-radius: 20px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-td {
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
-}
-
-td:first-child {
-  border-left: 1px solid var(--glass-border);
-  border-radius: 16px 0 0 16px;
-}
-
-td:last-child {
-  border-right: 1px solid var(--glass-border);
-  border-radius: 0 16px 16px 0;
-}
-
-tr:hover td {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.tag {
-  padding: 6px 14px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.75rem;
-}
-
-.tag-waiting {
-  background: rgba(241, 196, 15, 0.1);
-  color: #f1c40f;
-  border: 1px solid rgba(241, 196, 15, 0.3);
-}
-
-.tag-separation {
-  background: rgba(52, 152, 219, 0.1);
-  color: #3498db;
-  border: 1px solid rgba(52, 152, 219, 0.3);
-}
-
-.tag-billing {
-  background: rgba(155, 89, 182, 0.1);
-  color: #9b59b6;
-  border: 1px solid rgba(155, 89, 182, 0.3);
-}
-
-.tag-done {
-  background: rgba(39, 174, 96, 0.1);
-  color: #2ecc71;
-  border: 1px solid rgba(39, 174, 96, 0.3);
+  letter-spacing: 1px;
 }
