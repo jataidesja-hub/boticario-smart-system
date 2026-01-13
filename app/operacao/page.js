@@ -50,7 +50,7 @@ export default function Operacao() {
     return (
         <div className="animate-fade">
             <header style={{ marginBottom: '3rem' }}>
-                <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Operação Galpão ⚙️</h1>
+                <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Operação Galpão v2.3 ⚙️</h1>
                 <p style={{ color: 'var(--text-dim)' }}>Atualize o andamento dos pedidos em tempo real.</p>
             </header>
 
@@ -64,6 +64,7 @@ export default function Operacao() {
                             onChange={(e) => setFormData({ ...formData, funcionario: e.target.value })}
                         >
                             <option value="">Selecione...</option>
+                            {funcionarios.length === 0 && <option disabled>Carregando ou Nenhum encontrado...</option>}
                             {funcionarios.map(name => <option key={name} value={name}>{name}</option>)}
                         </select>
                     </div>
