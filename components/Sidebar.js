@@ -13,16 +13,12 @@ export default function Sidebar() {
 
     return (
         <aside className="sidebar">
-            <div className="logo-area" style={{ background: 'transparent' }}>
+            <div className="logo-area">
+                {/* Usamos a logo nova com filtros CSS para inverter: Preto vira Branco, Branco vira Transparente */}
                 <img
-                    src="/boticario-verde.png"
+                    src="/logo-new.jpg"
                     alt="O Boticário"
-                    style={{
-                        width: '100%',
-                        filter: 'brightness(0) invert(1) hue-rotate(180deg)', /* Garante que fique branco e nítido */
-                        mixBlendMode: 'screen', /* Remove o preto se houver */
-                        display: 'block'
-                    }}
+                    className="sidebar-logo"
                 />
             </div>
 
@@ -39,9 +35,9 @@ export default function Sidebar() {
                 ))}
             </nav>
 
-            <div style={{ marginTop: 'auto', fontSize: '0.8rem', color: 'var(--text-dim)', textAlign: 'center' }}>
-                <strong>GRUPO DINA SIMÃO</strong><br />
-                INTELLIGENCE SYSTEM v2.0
+            <div style={{ marginTop: 'auto', textAlign: 'center' }}>
+                <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'white', letterSpacing: '1px' }}>GRUPO DINA SIMÃO</div>
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', marginTop: '4px' }}>INTELLIGENCE SYSTEM v2.0</div>
             </div>
         </aside>
     );

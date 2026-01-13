@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 
 export default function Initializer() {
     const [loaded, setLoaded] = useState(false);
-    const [showInstall, setShowInstall] = useState(false);
     const [deferredPrompt, setDeferredPrompt] = useState(null);
+    const [showInstall, setShowInstall] = useState(false);
 
     useEffect(() => {
-        // Garante que a splash dure pelo menos 3 segundos
-        const timer = setTimeout(() => setLoaded(true), 3000);
+        const timer = setTimeout(() => setLoaded(true), 3500); // 3.5s de splash
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
@@ -30,19 +29,34 @@ export default function Initializer() {
 
     return (
         <div className={loaded ? 'app-loaded' : ''}>
+            {/* Botão de Instalar (PWA) */}
             {showInstall && (
-                <button id="install-btn" onClick={handleInstall} style={{ display: 'block' }}>
+                <button
+                    onClick={handleInstall}
+                    style={{
+                        position: 'fixed', top: '20px', right: '20px', zIndex: 2000,
+                        padding: '10px 20px', background: 'var(--primary)', color: '#fff',
+                        border: 'none', borderRadius: '30px', fontWeight: 'bold', cursor: 'pointer',
+                        boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
+                    }}
+                >
                     📲 Instalar App
                 </button>
             )}
 
-            {/* Splash Screen */}
+            {/* --- SPLASH SCREEN --- */}
             <div className="splash-container">
-                <img src="/logo-dina.jpg" className="splash-logo" alt="Grupo Dina Simão" />
+                <div className="splash-content-area">
+                    {/* O Cacto (Fundo Bege + Multiply) */}
+                    <img src="/logo-dina.jpg" className="splash-cactus" alt="Grupo Dina Simão" />
+
+                    {/* A Logo do Boticário (Preta + Multiply) */}
+                    <img src="/logo-new.jpg" className="splash-logo-text" alt="O Boticário" />
+                </div>
             </div>
 
-            {/* Cacto Flutuante (Aparece após o carregamento) */}
-            <img src="/logo-dina.jpg" className="float-logo" alt="Logo Flutuante" />
+            {/* --- Cacto que fica no canto depois --- */}
+            <img src="/logo-dina.jpg" className="float-logo" alt="Logo" />
         </div>
     );
 }
