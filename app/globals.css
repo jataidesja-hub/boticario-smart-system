@@ -5,11 +5,13 @@
   --bg-gradient: radial-gradient(circle at top right, #260a15 0%, #0a0507 100%);
   --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
-  --text-main: #f0f4f0;
-  --text-dim: rgba(240, 244, 240, 0.6);
+  /* Restaurando cores originais de alto contraste */
+  --text-main: #ffffff;
+  --text-primary: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.7);
   --sidebar-width: 280px;
-  --splash-bg: #0a0507;
-  /* Corrigido para Dark */
+  --splash-bg: #ffffff;
+  /* Inicialização BRANCA (Original) */
 }
 
 * {
